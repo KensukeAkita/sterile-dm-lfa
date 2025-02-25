@@ -1,6 +1,6 @@
 Some notes
 
-Make_Rate_Table.py is a script to make a table of reaction rates of active nu in Temperaure and (entropy-normalized) momentum.
+Make_Rate_Table.py is a script to make a table of reaction rates of active nu in temperaure (T) and momentum (y=p/T).
 
 DOF.py is a fitting formula for effective relativistic d.o.f's.
 
