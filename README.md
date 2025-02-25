@@ -4,7 +4,7 @@ Make_Rate_Table.py is a script to make a table of reaction rates of active nu in
 
 DOF.py is a fitting formula for effective relativistic d.o.f's.
 
-Asy_Redistribution.py is a script to compute a fluctuated asymmetry for each particle species. 
+Asy_Redistribution.py is a script to compute a fluctuated asymmetries for each particle species. 
 
 Cor_Asy_QCD.py is a script to compute a finite temperature QCD corrections in Asy_Redistribution.py.
 
