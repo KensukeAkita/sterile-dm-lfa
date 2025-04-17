@@ -1,5 +1,7 @@
 Some notes
 
+Examples.ipynb is the starting script to compute the sterile neutrino abundance with fixed parameters.
+
 Make_Rate_Table.py is a script to make a table of reaction rates of active nu in temperaure (T) and momentum (y=p/T).
 
 DOF.py is a fitting formula for effective relativistic d.o.f's.
