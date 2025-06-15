@@ -324,7 +324,7 @@ def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q):
         Delta_rho = 1/(2*np.pi**2)*(Del_rho_nue + Del_rho_numu + Del_rho_nutau + 2*(Del_rho_e + Del_rho_mu + Del_rho_tau) + 6*(Del_rho_u + Del_rho_d + Del_rho_c + Del_rho_s))
         rho = rho_0 + Delta_rho
         
-        P = s - rho +  1/(2*np.pi**2)*(zeta_nue*N_nue + zeta_numu*N_numu + zeta_nutau*N_tau + 2*(zeta_e*N_e + zeta_mu*N_mu + zeta_tau*N_tau) + 6*(zeta_u*N_u + zeta_d*N_d + zeta_c*N_c + zeta_s*N_s))
+        P = s - rho +  1/(2*np.pi**2)*(zeta_nue*N_nue + zeta_numu*N_numu + zeta_nutau*N_nutau + 2*(zeta_e*N_e + zeta_mu*N_mu + zeta_tau*N_tau) + 6*(zeta_u*N_u + zeta_d*N_d + zeta_c*N_c + zeta_s*N_s))
 
         #s = s_0
         #rho = rho_0
@@ -403,7 +403,7 @@ def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q):
 
         s = s_0 + 1/(2*np.pi**2)*(Del_s_nue + Del_s_numu + Del_s_nutau + 2*(Del_s_e + Del_s_mu + Del_s_tau)) + 1/2*T*(Chi2BSlope*zeta_B**2 + 2*Chi11QBSlope*zeta_B*zeta_Q + Chi2QSlope*zeta_Q**2)
 
-        P = s - rho + 1/(2*np.pi**2)*(zeta_nue*N_nue + zeta_numu*N_numu + zeta_nutau*N_tau + 2*(zeta_e*N_e + zeta_mu*N_mu + zeta_tau*N_tau))  + zeta_B*N_B +zeta_Q*N_Q
+        P = s - rho + 1/(2*np.pi**2)*(zeta_nue*N_nue + zeta_numu*N_numu + zeta_nutau*N_nutau + 2*(zeta_e*N_e + zeta_mu*N_mu + zeta_tau*N_tau))  + zeta_B*N_B +zeta_Q*N_Q
         
         #s = s_0
         #rho = rho_0
@@ -466,7 +466,7 @@ def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q):
         s = s_0 + 1/(2*np.pi**2)*(Del_s_nue + Del_s_numu + Del_s_nutau + 2*(Del_s_e + Del_s_mu + Del_s_tau) + Del_s_pic)
         Delta_rho = 1/(2*np.pi**2)*(Del_rho_nue + Del_rho_numu + Del_rho_nutau + 2*(Del_rho_e + Del_rho_mu + Del_rho_tau) + Del_rho_pic)
         rho = rho_0 + Delta_rho
-        P = s - rho +  1/(2*np.pi**2)*(zeta_nue*N_nue + zeta_numu*N_numu + zeta_nutau*N_tau + 2*(zeta_e*N_e + zeta_mu*N_mu + zeta_tau*N_tau + zeta_pic*N_pic))
+        P = s - rho +  1/(2*np.pi**2)*(zeta_nue*N_nue + zeta_numu*N_numu + zeta_nutau*N_nutau + 2*(zeta_e*N_e + zeta_mu*N_mu + zeta_tau*N_tau + zeta_pic*N_pic))
 
         #s = s_0
         #rho = rho_0
