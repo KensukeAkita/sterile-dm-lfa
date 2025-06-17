@@ -62,7 +62,7 @@ def System_SterileDM_Prod(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,s_ini,ms
     rho2, s2, P2, Delta_rho2, rho_nua2, rho_a2, Del_nua2, Del_a2, Del_nu_total2, Del_c_total2, Del_Q_QCD2 \
         = Thermo_quantities(T2,zeta_nue2,zeta_numu2,zeta_nutau2,zeta_B2,zeta_Q2)
 
-    dDelta_rhodT = (Delta_rho2 - Delta_rho)/h 
+    dDelta_rhodT = (Delta_rho2 - Delta_rho)/h + 4*Delta_rho/T
 
     #Kinetic equations for sterile nu production
 
