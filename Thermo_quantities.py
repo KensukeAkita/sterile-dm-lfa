@@ -282,18 +282,18 @@ def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q):
             Del_rho_c += weight*Ec*(1/(np.exp(Ec - zeta_c) + 1) + 1/(np.exp(Ec + zeta_c) + 1) - 2*1/(np.exp(Ec) + 1))
             Del_rho_s += weight*Es*(1/(np.exp(Es - zeta_s) + 1) + 1/(np.exp(Es + zeta_s) + 1) - 2*1/(np.exp(Es) + 1))
 
-            N_nue += weight*(1/(np.exp(y - zeta_nue) + 1) + 1/(np.exp(y + zeta_nue) + 1) - 2*1/(np.exp(y) + 1))
-            N_numu += weight*(1/(np.exp(y - zeta_numu) + 1) + 1/(np.exp(y + zeta_numu) + 1) - 2*1/(np.exp(y) + 1))
-            N_nutau += weight*(1/(np.exp(y - zeta_nutau) + 1) + 1/(np.exp(y + zeta_nutau) + 1) - 2*1/(np.exp(y) + 1))
+            N_nue += weight*(1/(np.exp(y - zeta_nue) + 1) - 1/(np.exp(y + zeta_nue) + 1))
+            N_numu += weight*(1/(np.exp(y - zeta_numu) + 1) - 1/(np.exp(y + zeta_numu) + 1))
+            N_nutau += weight*(1/(np.exp(y - zeta_nutau) + 1) - 1/(np.exp(y + zeta_nutau) + 1))
 
-            N_e += weight*(1/(np.exp(Ee - zeta_e) + 1) + 1/(np.exp(Ee + zeta_e) + 1) - 2*1/(np.exp(Ee) + 1))
-            N_mu += weight*(1/(np.exp(Emu - zeta_mu) + 1) + 1/(np.exp(Emu + zeta_mu) + 1) - 2*1/(np.exp(Emu) + 1))
-            N_tau += weight*(1/(np.exp(Etau - zeta_tau) + 1) + 1/(np.exp(Etau + zeta_tau) + 1) - 2*1/(np.exp(Etau) + 1))
+            N_e += weight*(1/(np.exp(Ee - zeta_e) + 1) - 1/(np.exp(Ee + zeta_e) + 1))
+            N_mu += weight*(1/(np.exp(Emu - zeta_mu) + 1) - 1/(np.exp(Emu + zeta_mu) + 1))
+            N_tau += weight*(1/(np.exp(Etau - zeta_tau) + 1) - 1/(np.exp(Etau + zeta_tau) + 1))
 
-            N_u += weight*(1/(np.exp(Eu - zeta_u) + 1) + 1/(np.exp(Eu + zeta_u) + 1) - 2*1/(np.exp(Eu) + 1))
-            N_d += weight*(1/(np.exp(Ed - zeta_d) + 1) + 1/(np.exp(Ed + zeta_d) + 1) - 2*1/(np.exp(Ed) + 1))
-            N_c += weight*(1/(np.exp(Ec - zeta_c) + 1) + 1/(np.exp(Ec + zeta_c) + 1) - 2*1/(np.exp(Ec) + 1))
-            N_s += weight*(1/(np.exp(Es - zeta_s) + 1) + 1/(np.exp(Es + zeta_s) + 1) - 2*1/(np.exp(Es) + 1))
+            N_u += weight*(1/(np.exp(Eu - zeta_u) + 1) - 1/(np.exp(Eu + zeta_u) + 1))
+            N_d += weight*(1/(np.exp(Ed - zeta_d) + 1) - 1/(np.exp(Ed + zeta_d) + 1))
+            N_c += weight*(1/(np.exp(Ec - zeta_c) + 1) - 1/(np.exp(Ec + zeta_c) + 1))
+            N_s += weight*(1/(np.exp(Es - zeta_s) + 1) - 1/(np.exp(Es + zeta_s) + 1))
 
 
             Del_s_nue += weight_s*((4/3*y**3 -zeta_nue*y**2)*(1/(np.exp(y - zeta_nue) + 1)) + (4/3*y**3 + zeta_nue*y**2)*(1/(np.exp(y + zeta_nue) + 1)) \
@@ -352,13 +352,13 @@ def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q):
             Del_rho_mu += weight*Emu*(1/(np.exp(Emu - zeta_mu) + 1) + 1/(np.exp(Emu + zeta_mu) + 1) - 2*1/(np.exp(Emu) + 1))
             Del_rho_tau += weight*Etau*(1/(np.exp(Etau - zeta_tau) + 1) + 1/(np.exp(Etau + zeta_tau) + 1) - 2*1/(np.exp(Etau) + 1))
 
-            N_nue += weight*(1/(np.exp(y - zeta_nue) + 1) + 1/(np.exp(y + zeta_nue) + 1) - 2*1/(np.exp(y) + 1))
-            N_numu += weight*(1/(np.exp(y - zeta_numu) + 1) + 1/(np.exp(y + zeta_numu) + 1) - 2*1/(np.exp(y) + 1))
-            N_nutau += weight*(1/(np.exp(y - zeta_nutau) + 1) + 1/(np.exp(y + zeta_nutau) + 1) - 2*1/(np.exp(y) + 1))
+            N_nue += weight*(1/(np.exp(y - zeta_nue) + 1) - 1/(np.exp(y + zeta_nue) + 1))
+            N_numu += weight*(1/(np.exp(y - zeta_numu) + 1) - 1/(np.exp(y + zeta_numu) + 1))
+            N_nutau += weight*(1/(np.exp(y - zeta_nutau) + 1) - 1/(np.exp(y + zeta_nutau) + 1))
 
-            N_e += weight*(1/(np.exp(Ee - zeta_e) + 1) + 1/(np.exp(Ee + zeta_e) + 1) - 2*1/(np.exp(Ee) + 1))
-            N_mu += weight*(1/(np.exp(Emu - zeta_mu) + 1) + 1/(np.exp(Emu + zeta_mu) + 1) - 2*1/(np.exp(Emu) + 1))
-            N_tau += weight*(1/(np.exp(Etau - zeta_tau) + 1) + 1/(np.exp(Etau + zeta_tau) + 1) - 2*1/(np.exp(Etau) + 1))
+            N_e += weight*(1/(np.exp(Ee - zeta_e) + 1) - 1/(np.exp(Ee + zeta_e) + 1))
+            N_mu += weight*(1/(np.exp(Emu - zeta_mu) + 1) - 1/(np.exp(Emu + zeta_mu) + 1))
+            N_tau += weight*(1/(np.exp(Etau - zeta_tau) + 1) - 1/(np.exp(Etau + zeta_tau) + 1))
 
             Del_s_nue += weight_s*((4/3*y**3 -zeta_nue*y**2)*(1/(np.exp(y - zeta_nue) + 1)) + (4/3*y**3 + zeta_nue*y**2)*(1/(np.exp(y + zeta_nue) + 1)) \
                                       - 2*(4/3*y**3)*(1/(np.exp(y) + 1)))
@@ -433,15 +433,15 @@ def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q):
 
             Del_rho_pic += weight*Epic*(1/(np.exp(Epic - zeta_pic) - 1) + 1/(np.exp(Epic + zeta_pic) + 1) - 2*1/(np.exp(Epic) - 1))
 
-            N_nue += weight*(1/(np.exp(y - zeta_nue) + 1) + 1/(np.exp(y + zeta_nue) + 1) - 2*1/(np.exp(y) + 1))
-            N_numu += weight*(1/(np.exp(y - zeta_numu) + 1) + 1/(np.exp(y + zeta_numu) + 1) - 2*1/(np.exp(y) + 1))
-            N_nutau += weight*(1/(np.exp(y - zeta_nutau) + 1) + 1/(np.exp(y + zeta_nutau) + 1) - 2*1/(np.exp(y) + 1))
+            N_nue += weight*(1/(np.exp(y - zeta_nue) + 1) - 1/(np.exp(y + zeta_nue) + 1))
+            N_numu += weight*(1/(np.exp(y - zeta_numu) + 1) - 1/(np.exp(y + zeta_numu) + 1))
+            N_nutau += weight*(1/(np.exp(y - zeta_nutau) + 1) - 1/(np.exp(y + zeta_nutau) + 1))
 
-            N_e += weight*(1/(np.exp(Ee - zeta_e) + 1) + 1/(np.exp(Ee + zeta_e) + 1) - 2*1/(np.exp(Ee) + 1))
-            N_mu += weight*(1/(np.exp(Emu - zeta_mu) + 1) + 1/(np.exp(Emu + zeta_mu) + 1) - 2*1/(np.exp(Emu) + 1))
-            N_tau += weight*(1/(np.exp(Etau - zeta_tau) + 1) + 1/(np.exp(Etau + zeta_tau) + 1) - 2*1/(np.exp(Etau) + 1))
+            N_e += weight*(1/(np.exp(Ee - zeta_e) + 1) - 1/(np.exp(Ee + zeta_e) + 1))
+            N_mu += weight*(1/(np.exp(Emu - zeta_mu) + 1) - 1/(np.exp(Emu + zeta_mu) + 1))
+            N_tau += weight*(1/(np.exp(Etau - zeta_tau) + 1) - 1/(np.exp(Etau + zeta_tau) + 1))
 
-            N_pic += weight*(1/(np.exp(Epic - zeta_pic) - 1) + 1/(np.exp(Epic + zeta_pic) - 1) - 2*1/(np.exp(Epic) - 1))
+            N_pic += weight*(1/(np.exp(Epic - zeta_pic) - 1) - 1/(np.exp(Epic + zeta_pic) - 1))
 
             Del_s_nue += weight_s*((4/3*y**3 -zeta_nue*y**2)*(1/(np.exp(y - zeta_nue) + 1)) + (4/3*y**3 + zeta_nue*y**2)*(1/(np.exp(y + zeta_nue) + 1)) \
                                       - 2*(4/3*y**3)*(1/(np.exp(y) + 1)))
