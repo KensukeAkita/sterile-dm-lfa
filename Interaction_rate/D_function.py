@@ -3,7 +3,7 @@ from numba.core.errors import NumbaDeprecationWarning
 import warnings
 warnings.simplefilter('ignore', category=NumbaDeprecationWarning)
 
-#Analytic formula in (A.12)
+#Analytic formula in (A.12) in 2210.10307
 #The following functions are confirmed by mathematica.
 
 @jit(nopython=True,nogil=True,fastmath=True) 
