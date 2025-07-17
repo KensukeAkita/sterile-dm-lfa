@@ -1,3 +1,7 @@
+"""
+This file implements some lengthy terms for the neutrino interaction rates. See arXiv: 2210.10307 for details.
+"""
+
 from numba import jit
 from numba.core.errors import NumbaDeprecationWarning
 import warnings
