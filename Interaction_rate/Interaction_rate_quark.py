@@ -1,3 +1,7 @@
+"""
+This file implements the neutrino interaction rates with quarks for a fixed momentum, i.
+"""
+
 import numpy as np
 from numba import jit
 from Interaction_rate.D_function import D_function
