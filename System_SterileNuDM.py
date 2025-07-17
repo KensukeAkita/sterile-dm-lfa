@@ -3,7 +3,7 @@ from numba import jit
 import scipy as sp
 from Constants import *
 from Tolerances import *
-from Momentum_Grid import *
+from Setup_Grids import *
 from Thermodynamics.DOF import grho_below120MeV, dgrhodT_below120MeV, grho_above120MeV, dgrhodT_above120MeV
 from Asy_Redistribution import eqs_redist
 from Thermodynamics.Thermo_quantities import Thermo_quantities
