@@ -57,13 +57,13 @@ def Make_Table(La,Le_ini,Lmu_ini,Ltau_ini,flavor):
             
             T = T_interp[nT]
             
-            #Redistribution of asymmetries
+            #Redistribution of asymmetries (chemical potentials)
 
             x0 = np.array([0,0,0,0,0])
 
             ans =  sp.optimize.root(eqs_redist, x0, args = (T,La,Le_ini,Lmu_ini,Ltau_ini,flavor), method='hybr',tol=tol_root)  
             
-            zeta_nue = ans.x[0]
+            zeta_nue = ans.x[0] #chemical potential normalized by temperature, zeta = mu/T
             zeta_numu = ans.x[1]
             zeta_nutau = ans.x[2]
 
