@@ -14,7 +14,7 @@ System_SterileNuDM.py: describes the evolution equations for sterile neutrinos, 
 
 Asy_Redistribution.py: describes the evolution equations for the redistribution of each particle-antiparticle asymmetry.
 
-Make_Rate_Table.py: is a script to make a table of the active neutrino interaction rate in temperature (T) and its momentum (y=p/T). 
+Make_Rate_Table.py: is a script to make a table of the active neutrino interaction rate in temperature (T) and its momentum (y=p/T). This table is an input for System_SterileNuDM.py.
 
 Momentum_Gird.py: fixes the numbers and ranges of grids, such as the momentum of sterile neutrinos. In particular, the number of grids for the momentum of sterile neutrinos must be very large for numerical convergence. The default is 10001, but the larger value is required for very large lepton asymmetries.  
 
