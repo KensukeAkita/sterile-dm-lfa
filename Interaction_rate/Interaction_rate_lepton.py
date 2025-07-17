@@ -25,17 +25,13 @@ def Interaction_rate_lepton(T,i,zeta_nue,zeta_numu,zeta_nutau,zeta_e,zeta_mu,zet
         xb = xmu
         xc = xtau  #always xb < xc
         
-        zeta_a = zeta_e
+        zeta_a = zeta_e #chemical potential normalized by temperature, zeta = mu/T
         zeta_b = zeta_mu
         zeta_c = zeta_tau 
 
         zeta_nua = zeta_nue
         zeta_nub = zeta_numu
         zeta_nuc = zeta_nutau 
-
-        #zeta_a = 0
-        #zeta_b = 0
-        #zeta_c = 0 
 
 
     elif (flavor == 'mu'):
@@ -52,12 +48,6 @@ def Interaction_rate_lepton(T,i,zeta_nue,zeta_numu,zeta_nutau,zeta_e,zeta_mu,zet
         zeta_nub = zeta_nue
         zeta_nuc = zeta_nutau 
 
-
-        #zeta_a = 0
-        #zeta_b = 0
-        #zeta_c = 0
-
-
     else:
 
         xa = xtau
@@ -71,11 +61,6 @@ def Interaction_rate_lepton(T,i,zeta_nue,zeta_numu,zeta_nutau,zeta_e,zeta_mu,zet
         zeta_nua = zeta_nutau
         zeta_nub = zeta_nue
         zeta_nuc = zeta_numu 
-
-
-        #zeta_a = 0
-        #zeta_b = 0
-        #zeta_c = 0
 
 
 
