@@ -1,9 +1,15 @@
+"""
+The effective number of relativistic degree of freedom for energy density and entropy density
+The fitting formula are adopted from K. Saikawa and S. Shirai, arXiv: 1803.01038.
+"""
+
+
 import numpy as np
 from numba import jit
 
 # g below 120 MeV
 
-#constant
+#constants
 
 me = 0.511 #MeV
 
