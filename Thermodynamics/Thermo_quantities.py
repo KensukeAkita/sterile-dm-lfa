@@ -14,7 +14,7 @@ ChiData = np.loadtxt("ChiTable.dat")
 @jit(nopython=True,nogil=True,fastmath=True)
 def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q,flavor):
 
-    zeta_e = zeta_nue - zeta_Q
+    zeta_e = zeta_nue - zeta_Q #chemical potential normalized by temperature, zeta = mu/T
     zeta_mu = zeta_numu - zeta_Q   
     zeta_tau = zeta_nutau - zeta_Q
 
