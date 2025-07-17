@@ -29,7 +29,7 @@ def Interaction_rate_meson(T,i,zeta_nua,zeta_a,zeta_Q,zeta_U,zeta_D,flavor):
     xKc892 = mKc892/T
     xomega = momega/T
 
-    zeta_pic = -zeta_Q #negatively charged pion
+    zeta_pic = -zeta_Q #negatively charged pion #chemical potential normalized by temperature, zeta = mu/T
     zeta_mesonc = -zeta_Q #negatively charged meson
     zeta_meson0 = 0
 
