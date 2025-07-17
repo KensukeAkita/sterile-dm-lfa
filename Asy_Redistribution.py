@@ -31,7 +31,7 @@ def eqs_redist(x,T,La,Le_ini,Lmu_ini,Ltau_ini,flavor):
 
 
 
-    zeta_nue = x[0] #zeta = mu/T
+    zeta_nue = x[0] #chemical potential normalized by temperature, zeta = mu/T
     zeta_numu = x[1]
     zeta_nutau = x[2]
     zeta_B = x[3]
