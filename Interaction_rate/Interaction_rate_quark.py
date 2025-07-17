@@ -10,7 +10,7 @@ from Setup_Grids import *
 
 
 @jit(nopython=True,nogil=True,fastmath=True) 
-def Interaction_rate_quark(T,i,zeta_nua,zeta_a,zeta_U,zeta_D,flavor):
+def Interaction_rate_quark(T,i,zeta_nua,zeta_a,zeta_U,zeta_D,flavor): 
 
     Coll = 0
 
@@ -55,7 +55,7 @@ def Interaction_rate_quark(T,i,zeta_nua,zeta_a,zeta_U,zeta_D,flavor):
 
             if (T>LambdaQCD + 10):
 
-                #up-quarkとdown-quarkのflavorでsumをとる
+                #sum for up-quark and down-quark flavors
 
                 for upquark in range(2):
 
