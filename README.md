@@ -1,13 +1,21 @@
-Some notes
+# sterile-dm-lfa: Sterile neutrino dark matter with lepton flavor asymmetries
 
-Examples.ipynb is the starting script to compute the sterile neutrino abundance with fixed parameters.
+The code "sterile-dm-lfa" has been developed by Kensuke Akita and Maksym Ovchynnikov to trace the evolution of sterile neutrino dark matter in presence of primordial lepton flavor asymmetries. The underlying physics and thechnical details are described in the associated preprint []. If you use this code, please cite this reference.
 
-Make_Rate_Table.py is a script to make a table of reaction rates of active nu in temperaure (T) and momentum (y=p/T).
 
-DOF.py is a fitting formula for effective relativistic d.o.f's.
+## The code structure
 
-Asy_Redistribution.py is a script to compute a fluctuated asymmetries for each particle species. 
+The code contains the following main scripts in Python:
 
-Cor_Asy_QCD.py is a script to compute a finite temperature QCD corrections in Asy_Redistribution.py.
+Solver_SterileDM.ipynb: is a sample script in the Jupyter Notebook that solves the system of the sterile neutrino production and output the sterile neutrino abundance, its momentum distribution in the current Universe and the evolution of lepton flavor asymmetries mixing with sterile neutrinos.
 
-ChiTable.dat is a data file of susceptibilities, copied from the public code: https://github.com/ntveem/sterile-dm
+Sterile_Nu_Prameters.py: fixes sterile neutrino mass and mixing angle with active neutrinos, and initial values of lepton flavor asymmetries. In the current version, any flavor space in lepton flavor asymmetries can be taken. On the other hand, sterile neutrinos can mix with only one flavor active neutrinos. 
+
+System_SterileNuDM.py: describes the evolution equations for sterile neutrinos, the plasma temperature, and lepton flavor asymmetry mixing with sterile neutrinos.
+
+Asy_Redistribution.py: describes the evolution equations for the redistribution of each particle-antiparticle asymmetry.
+
+Make_Rate_Table.py: is a script to make a table of the active neutrino interaction rate in temperature (T) and its momentum (y=p/T). 
+
+Momentum_Gird.py: fixes the numbers of grids, such as the momentum of sterile neutrinos. The current version only deals with linear grids. In particular, the number of grids for the momentum of sterile neutrinos must be very large for numerical convergence. The default is 10001, but the larger value is required for very large lepton asymmetries.  
+
