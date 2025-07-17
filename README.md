@@ -2,7 +2,6 @@
 
 The code "sterile-dm-lfa" has been developed by Kensuke Akita and Maksym Ovchynnikov to trace the evolution of sterile neutrino dark matter in presence of primordial lepton flavor asymmetries. The underlying physics and thechnical details are described in the associated preprint []. If you use this code, please cite this reference.
 
-
 ## The code structure
 
 The code contains the following main scripts in Python:
@@ -17,5 +16,9 @@ Asy_Redistribution.py: describes the evolution equations for the redistribution 
 
 Make_Rate_Table.py: is a script to make a table of the active neutrino interaction rate in temperature (T) and its momentum (y=p/T). 
 
-Momentum_Gird.py: fixes the numbers of grids, such as the momentum of sterile neutrinos. The current version only deals with linear grids. In particular, the number of grids for the momentum of sterile neutrinos must be very large for numerical convergence. The default is 10001, but the larger value is required for very large lepton asymmetries.  
+Momentum_Gird.py: fixes the numbers and ranges of grids, such as the momentum of sterile neutrinos. In particular, the number of grids for the momentum of sterile neutrinos must be very large for numerical convergence. The default is 10001, but the larger value is required for very large lepton asymmetries.  
+
+## Limitations
+
+Details of the limitation of this code are described in the main text of [].
 
