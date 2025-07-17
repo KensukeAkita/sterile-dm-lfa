@@ -1,5 +1,3 @@
-
-
 #Sterile Nu parameters
 
 Uas = (1.70*10**(-14))**(1/2)
