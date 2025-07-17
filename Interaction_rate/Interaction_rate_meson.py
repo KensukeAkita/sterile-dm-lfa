@@ -1,3 +1,7 @@
+"""
+This file implements the neutrino interaction rates with mesons for a fixed momentum, i.
+"""
+
 import numpy as np
 from numba import jit
 from Constants import *
