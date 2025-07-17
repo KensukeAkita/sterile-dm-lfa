@@ -5,7 +5,7 @@ This file implements the neutrino interaction rates with mesons for a fixed mome
 import numpy as np
 from numba import jit
 from Constants import *
-from Momentum_Grid import *
+from Setup_Grids import *
 
 #In this version we include both fusion and scattering processes with heavy mesons
 
