@@ -3,10 +3,10 @@ from Constants import *
 from QCD_GlobalParameters import * 
 
 #Setting for linear momentum grids
+#the number of momentum grids should be an odd number because we use the Simpson method
 
 n = 10001 #number of grids for sterile neutrinos 
-#The actual number of momentum grids is n-1. 
-#For Le=-Lmu=0.1, Ltau=0, we use n=2e5.
+#For Le=-Lmu=0.1, Ltau=0, we use n=200001.
 
 y_max = 16
 y_min = 0.1
@@ -69,7 +69,7 @@ T_Table = np.concatenate((T_low,T_intermedi,T_high))
 
 
 
-n1 = 41 #bins for the integrals in the neutrino interaction rate, n1 must be an odd number because we use the Simpson method
+n1 = 41 #bins for the integrals in the neutrino interaction rate.
 
 y_max1 = 20
 y_min1 = 0.01
