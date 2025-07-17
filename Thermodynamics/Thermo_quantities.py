@@ -1,3 +1,7 @@
+"""
+Thermodynamics quantities (energy density, entropy density, pressure, number density asymmetries) are calculated. 
+All Thermodynamics quantities are normalized by temperature.
+"""
 import numpy as np
 from numba import jit
 from Constants import *
@@ -6,8 +10,6 @@ from Momentum_Grid import *
 from Thermodynamics.DOF import *
 
 ChiData = np.loadtxt("ChiTable.dat")
-
-#All Thermo quantities are normalized by temperature.
 
 @jit(nopython=True,nogil=True,fastmath=True)
 def Thermo_quantities(T,zeta_nue,zeta_numu,zeta_nutau,zeta_B,zeta_Q,flavor):
