@@ -56,6 +56,7 @@ def Interaction_rate_quark(T,i,zeta_nua,zeta_a,zeta_U,zeta_D,flavor):
             if (T>LambdaQCD + 10):
 
                 #sum for up-quark and down-quark flavors
+                #To avoid double-counting, we will include a factor of 1/2 later.
 
                 for upquark in range(2):
 
