@@ -1,0 +1,712 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28250,        704]
+NotebookOptionsPosition[     27735,        686]
+NotebookOutlinePosition[     28168,        703]
+CellTagsIndexPosition[     28125,        700]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Boltzmann approach for the distribution", "Section",
+ CellChangeTimes->{{3.9597670024634275`*^9, 3.9597670029553146`*^9}, {
+  3.9598224638265033`*^9, 
+  3.959822470946949*^9}},ExpressionUUID->"c1996e57-a34d-402e-9bf8-\
+cd73dfc4a529"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ygridDistr", "=", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["10", "#"], "&"}], "/@", 
+    RowBox[{"Table", "[", 
+     RowBox[{"i", ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"2.5", "+", 
+         RowBox[{"Log10", "[", 
+          FractionBox["Tmax", "10."], "]"}]}], ",", 
+        FractionBox[
+         RowBox[{"(", 
+          RowBox[{"2.5", "+", 
+           RowBox[{"Log10", "[", 
+            FractionBox["Tmax", "10."], "]"}], "+", "2"}], ")"}], "180"]}], 
+       "}"}]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"logymin", ",", "logymax"}], "}"}], "=", 
+   RowBox[{"Log10", "[", 
+    RowBox[{"MinMax", "[", "ygridDistr", "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ResFactor\[Nu]\[Alpha]Distr", "[", 
+    RowBox[{
+    "ms_", ",", "y_", ",", "Le_", ",", "L\[Mu]_", ",", "L\[Tau]_", ",", 
+     "gstar_", ",", "\[Mu]\[Nu]\[Alpha]_", ",", "\[CapitalDelta]nlTot_", ",", 
+     "\[CapitalDelta]LQstrong_", ",", "\[Rho]l\[Alpha]_", ",", "T_", ",", 
+     "GF_", ",", "mZ_", ",", "mW_", ",", "sW_", ",", "T0_", ",", "gstarT0_"}],
+     "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ResFactor\[Nu]\[Alpha]", "[", 
+      RowBox[{"ms", ",", 
+       FractionBox["y", "a"], ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]", ",", 
+       "gstar", ",", "\[Mu]\[Nu]\[Alpha]", ",", "\[CapitalDelta]nlTot", ",", 
+       "\[CapitalDelta]LQstrong", ",", "\[Rho]l\[Alpha]", ",", "T", ",", "GF",
+        ",", "mZ", ",", "mW", ",", "sW"}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"a", "->", 
+       RowBox[{
+        FractionBox["T0", "T"], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox["gstarT0", "gstar"], ")"}], 
+         FractionBox["1", "3"]]}]}], "}"}]}], "//", "Simplify"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ResFactor\[Nu]\[Alpha]barDistr", "[", 
+     RowBox[{
+     "ms_", ",", "y_", ",", "Le_", ",", "L\[Mu]_", ",", "L\[Tau]_", ",", 
+      "gstar_", ",", "\[Mu]\[Nu]\[Alpha]_", ",", "\[CapitalDelta]nlTot_", ",",
+       "\[CapitalDelta]LQstrong_", ",", "\[Rho]l\[Alpha]_", ",", "T_", ",", 
+      "GF_", ",", "mZ_", ",", "mW_", ",", "sW_", ",", "T0_", ",", 
+      "gstarT0_"}], "]"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ResFactor\[Nu]\[Alpha]bar", "[", 
+       RowBox[{"ms", ",", 
+        FractionBox["y", "a"], ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]", ",", 
+        "gstar", ",", "\[Mu]\[Nu]\[Alpha]", ",", "\[CapitalDelta]nlTot", ",", 
+        "\[CapitalDelta]LQstrong", ",", "\[Rho]l\[Alpha]", ",", "T", ",", 
+        "GF", ",", "mZ", ",", "mW", ",", "sW"}], "]"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{"a", "->", 
+        RowBox[{
+         FractionBox["T0", "T"], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           FractionBox["gstarT0", "gstar"], ")"}], 
+          FractionBox["1", "3"]]}]}], "}"}]}], "//", "Simplify"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"ResFactor\[Nu]\[Alpha]Distr", "[", 
+     RowBox[{"ms", ",", "y", ",", 
+      RowBox[{"-", "Le"}], ",", 
+      RowBox[{"-", "L\[Mu]"}], ",", 
+      RowBox[{"-", "L\[Tau]"}], ",", "gstar", ",", 
+      RowBox[{"-", "\[Mu]\[Nu]\[Alpha]"}], ",", 
+      RowBox[{"-", "\[CapitalDelta]nlTot"}], ",", 
+      RowBox[{"-", "\[CapitalDelta]LQstrong"}], ",", "\[Rho]l\[Alpha]", ",", 
+      "T", ",", "GF", ",", "mZ", ",", "mW", ",", "sW", ",", "T0", ",", 
+      "gstarT0"}], "]"}], ";"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BoltzmannSolverDistribution", "[", 
+   RowBox[{"ms_", ",", "U2_", ",", "le_", ",", "l\[Mu]_", ",", "l\[Tau]_"}], 
+   "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"mskev", "=", 
+      RowBox[{
+       SuperscriptBox["10", 
+        RowBox[{"-", "6"}]], "ms"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "}"}], "=", 
+      RowBox[{"{", 
+       RowBox[{"le", ",", "l\[Mu]", ",", "l\[Tau]"}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ifMissing", "[", 
+      RowBox[{"Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"pyexpl", "[", 
+       RowBox[{"y_", ",", "T_"}], "]"}], "=", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{"gsint", "[", 
+           RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], 
+          RowBox[{"gsint", "[", 
+           RowBox[{"Tmax", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+           "]"}]], ")"}], 
+        FractionBox["1", "3"]], "*", 
+       FractionBox["T", "Tmax"], "y"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"dilutionTminToToday", "=", 
+      RowBox[{
+       FractionBox["Ttoday", "TminIntegration"], "*", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox["gstarToday", 
+          RowBox[{"gsint", "[", 
+           RowBox[{
+           "TminIntegration", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+           "]"}]], ")"}], 
+        FractionBox["1", "3"]]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"pyexplToday", "[", "y_", "]"}], "=", 
+      RowBox[{
+       RowBox[{"pyexpl", "[", 
+        RowBox[{"y", ",", "TminIntegration"}], "]"}], "*", 
+       "dilutionTminToToday"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ypexpl", "[", 
+       RowBox[{"p_", ",", "T_"}], "]"}], "=", 
+      RowBox[{"Quiet", "[", 
+       RowBox[{"y", "/.", 
+        RowBox[{
+         RowBox[{"Solve", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"pyexpl", "[", 
+             RowBox[{"y", ",", "T"}], "]"}], "==", "p"}], ",", "y"}], "]"}], 
+         "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ypexplToday", "[", "p_", "]"}], "=", 
+      RowBox[{
+       RowBox[{"ypexpl", "[", 
+        RowBox[{"p", ",", "TminIntegration"}], "]"}], "*", 
+       SuperscriptBox["dilutionTminToToday", 
+        RowBox[{"-", "1"}]]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"pgrid", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"pyexplToday", "[", "#", "]"}], "&"}], "/@", "ygridDistr"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"pminToday", "[", 
+         RowBox[{"Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], ",", 
+        RowBox[{"pmaxToday", "[", 
+         RowBox[{"Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}]}], "}"}], 
+      "=", 
+      RowBox[{"MinMax", "[", "pgrid", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"ResFactor\[Nu]\[Alpha]DistrInserted", "[", 
+         RowBox[{"y_", ",", "T_"}], "]"}], ",", 
+        RowBox[{"ResFactor\[Nu]\[Alpha]barDistrInserted", "[", 
+         RowBox[{"y_", ",", "T_"}], "]"}]}], "}"}], "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{
+         "mskev", ",", "y", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v", ",", 
+          RowBox[{"gsint", "[", 
+           RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], 
+          ",", 
+          RowBox[{"\[Mu]\[Nu]\[Alpha]Int", "[", 
+           RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], 
+          ",", 
+          RowBox[{"\[CapitalDelta]nlTotInt", "[", 
+           RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], 
+          ",", 
+          RowBox[{"\[CapitalDelta]LQstrongInt", "[", 
+           RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], 
+          ",", 
+          RowBox[{"\[Rho]l\[Alpha]Int", "[", 
+           RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], 
+          ",", "T", ",", "GFval", ",", "mZval", ",", "mWval", ",", "sWval", 
+          ",", "Tmax", ",", 
+          RowBox[{"gsint", "[", 
+           RowBox[{"Tmax", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+           "]"}]}], "]"}], "&"}], "/@", 
+       RowBox[{"{", 
+        RowBox[{
+        "ResFactor\[Nu]\[Alpha]Distr", ",", 
+         "ResFactor\[Nu]\[Alpha]barDistr"}], "}"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"For", " ", 
+       SubscriptBox["\[Nu]", "s"]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"tabTres", "=", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"10", "^", 
+            RowBox[{"(", 
+             RowBox[{"T", "/.", 
+              RowBox[{"FindRoot", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ResFactor\[Nu]\[Alpha]DistrInserted", "[", 
+                  RowBox[{"y", ",", 
+                   SuperscriptBox["10", "T"]}], "]"}], "==", "0."}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"T", ",", 
+                  RowBox[{"Log10", "[", "0.05", "]"}], ",", 
+                  RowBox[{"Log10", "[", "TminIntegration", "]"}], ",", 
+                  RowBox[{"Log10", "[", "Tmax", "]"}]}], "}"}]}], "]"}]}], 
+             ")"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", "ygridDistr"}], "}"}]}], "]"}], "//", "Quiet"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"tabTres", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"ResFactor\[Nu]\[Alpha]DistrInserted", "[", 
+                RowBox[{
+                 RowBox[{"#", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], ",", 
+                 RowBox[{"0.99", 
+                  RowBox[{"#", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}], "*", 
+               RowBox[{"ResFactor\[Nu]\[Alpha]DistrInserted", "[", 
+                RowBox[{
+                 RowBox[{"#", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], ",", 
+                 RowBox[{"1.01", 
+                  RowBox[{"#", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}]}], "<", "0"}], "||", 
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "==", "TminIntegration"}]}], 
+            ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", "TminIntegration"}], 
+           "]"}]}], "}"}], "&"}], "/@", "tabTres"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"For", " ", 
+       SubscriptBox[
+        OverscriptBox["\[Nu]", "_"], "s"]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"tabTresBar", "=", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"10", "^", 
+            RowBox[{"(", 
+             RowBox[{"T", "/.", 
+              RowBox[{"FindRoot", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"ResFactor\[Nu]\[Alpha]barDistrInserted", "[", 
+                  RowBox[{"y", ",", 
+                   SuperscriptBox["10", "T"]}], "]"}], "==", "0."}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"T", ",", 
+                  RowBox[{"Log10", "[", "0.05", "]"}], ",", 
+                  RowBox[{"Log10", "[", "TminIntegration", "]"}], ",", 
+                  RowBox[{"Log10", "[", "Tmax", "]"}]}], "}"}]}], "]"}]}], 
+             ")"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", "ygridDistr"}], "}"}]}], "]"}], "//", "Quiet"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"tabTresBar", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"ResFactor\[Nu]\[Alpha]barDistrInserted", "[", 
+                RowBox[{
+                 RowBox[{"#", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], ",", 
+                 RowBox[{"0.99", 
+                  RowBox[{"#", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}], "*", 
+               RowBox[{"ResFactor\[Nu]\[Alpha]barDistrInserted", "[", 
+                RowBox[{
+                 RowBox[{"#", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], ",", 
+                 RowBox[{"1.01", 
+                  RowBox[{"#", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}]}], "<", "0"}], "||", 
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "==", "TminIntegration"}]}], 
+            ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", "TminIntegration"}], 
+           "]"}]}], "}"}], "&"}], "/@", "tabTresBar"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", "XXX", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Select", "[", 
+         RowBox[{"tabTres", ",", 
+          RowBox[{
+           RowBox[{"!", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"TminIntegration", ",", "Tmax"}], "}"}], ",", "#"}], 
+             "]"}]}], "&"}]}], "]"}], "!=", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"TresInt", "[", "y_", "]"}], "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Interpolation", "[", 
+            RowBox[{
+             RowBox[{"Log", "[", "tabTres", "]"}], ",", 
+             RowBox[{"InterpolationOrder", "->", "1"}]}], "]"}], "[", 
+           RowBox[{"Log", "[", "y", "]"}], "]"}], "//", "Exp"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"der", "[", 
+          RowBox[{"y_", ",", "T_"}], "]"}], "=", 
+         RowBox[{"Abs", "[", 
+          RowBox[{"D", "[", 
+           RowBox[{
+            RowBox[{"ResFactor\[Nu]\[Alpha]DistrInserted", "[", 
+             RowBox[{"y", ",", "T"}], "]"}], ",", "T"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"IntegrandRHSdistr", "[", 
+          RowBox[{
+          "ms", ",", "y_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+          "]"}], "=", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Pi"}], "*", 
+            RowBox[{"dtdTint", "[", 
+             RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+             "]"}], 
+            FractionBox[
+             SuperscriptBox[
+              RowBox[{"\[CapitalDelta]v", "[", 
+               RowBox[{
+                RowBox[{"pyexpl", "[", 
+                 RowBox[{"y", ",", "T"}], "]"}], ",", "mskev"}], "]"}], "2"], 
+             "2"], "U2", 
+            FractionBox[
+             RowBox[{"f\[Nu]\[Alpha]FD\[Mu]", "[", 
+              RowBox[{
+               RowBox[{"pyexpl", "[", 
+                RowBox[{"y", ",", "T"}], "]"}], ",", "T", ",", 
+               RowBox[{"\[Mu]\[Nu]\[Alpha]Int", "[", 
+                RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+                "]"}]}], "]"}], 
+             RowBox[{"der", "[", 
+              RowBox[{"y", ",", "T"}], "]"}]]}], ")"}], "/.", 
+          RowBox[{"{", 
+           RowBox[{"T", "->", 
+            RowBox[{"TresInt", "[", "y", "]"}]}], "}"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"IntegrandRHSdistrTodaySlow", "[", 
+          RowBox[{
+          "ms", ",", "p_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+          "]"}], "=", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Abs", "[", 
+             FractionBox[
+              RowBox[{
+               RowBox[{"TresInt", "[", 
+                RowBox[{"ypexplToday", "[", "p", "]"}], "]"}], "-", 
+               "TminIntegration"}], "TminIntegration"], "]"}], "<", "0.01"}], 
+           ",", 
+           SuperscriptBox["10", 
+            RowBox[{"-", "90."}]], ",", 
+           RowBox[{"Evaluate", "[", 
+            RowBox[{"IntegrandRHSdistr", "[", 
+             RowBox[{"ms", ",", 
+              RowBox[{"ypexplToday", "[", "p", "]"}], ",", "Lev", ",", 
+              "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], "]"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"IntegrandRHSdistrTodayRetabulated", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"p", ",", 
+             RowBox[{"IntegrandRHSdistrTodaySlow", "[", 
+              RowBox[{
+              "ms", ",", "p", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+              "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"p", ",", "pgrid"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"IntegrandRHSdistrToday", "[", 
+          RowBox[{
+          "ms", ",", "p_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+          "]"}], "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Interpolation", "[", 
+            RowBox[{
+             RowBox[{"IntegrandRHSdistrTodayRetabulated", "//", "Log"}], ",", 
+             RowBox[{"InterpolationOrder", "->", "1"}]}], "]"}], "[", 
+           RowBox[{"Log", "[", "p", "]"}], "]"}], "//", "Exp"}]}], ";"}], 
+       "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"IntegrandRHSdistrToday", "[", 
+         RowBox[{
+         "ms", ",", "p_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+         "]"}], "=", "0."}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Select", "[", 
+         RowBox[{"tabTresBar", ",", 
+          RowBox[{
+           RowBox[{"!", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"TminIntegration", ",", "Tmax"}], "}"}], ",", "#"}], 
+             "]"}]}], "&"}]}], "]"}], "!=", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"TresIntBar", "[", "y_", "]"}], "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Interpolation", "[", 
+            RowBox[{
+             RowBox[{"Log", "[", "tabTresBar", "]"}], ",", 
+             RowBox[{"InterpolationOrder", "->", "1"}]}], "]"}], "[", 
+           RowBox[{"Log", "[", "y", "]"}], "]"}], "//", "Exp"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"derBar", "[", 
+          RowBox[{"y_", ",", "T_"}], "]"}], "=", 
+         RowBox[{"Abs", "[", 
+          RowBox[{"D", "[", 
+           RowBox[{
+            RowBox[{"ResFactor\[Nu]\[Alpha]barDistrInserted", "[", 
+             RowBox[{"y", ",", "T"}], "]"}], ",", "T"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"IntegrandRHSdistrBar", "[", 
+          RowBox[{
+          "ms", ",", "y_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+          "]"}], "=", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Pi"}], "*", 
+            RowBox[{"dtdTint", "[", 
+             RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+             "]"}], 
+            FractionBox[
+             SuperscriptBox[
+              RowBox[{"\[CapitalDelta]v", "[", 
+               RowBox[{
+                RowBox[{"pyexpl", "[", 
+                 RowBox[{"y", ",", "T"}], "]"}], ",", "mskev"}], "]"}], "2"], 
+             "2"], "U2", 
+            FractionBox[
+             RowBox[{"f\[Nu]\[Alpha]FD\[Mu]", "[", 
+              RowBox[{
+               RowBox[{"pyexpl", "[", 
+                RowBox[{"y", ",", "T"}], "]"}], ",", "T", ",", 
+               RowBox[{"-", 
+                RowBox[{"\[Mu]\[Nu]\[Alpha]Int", "[", 
+                 RowBox[{"T", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+                 "]"}]}]}], "]"}], 
+             RowBox[{"derBar", "[", 
+              RowBox[{"y", ",", "T"}], "]"}]]}], ")"}], "/.", 
+          RowBox[{"{", 
+           RowBox[{"T", "->", 
+            RowBox[{"TresIntBar", "[", "y", "]"}]}], "}"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"IntegrandRHSdistrTodaySlowBar", "[", 
+          RowBox[{
+          "ms", ",", "p_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+          "]"}], "=", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Abs", "[", 
+             FractionBox[
+              RowBox[{
+               RowBox[{"TresIntBar", "[", 
+                RowBox[{"ypexplToday", "[", "p", "]"}], "]"}], "-", 
+               "TminIntegration"}], "TminIntegration"], "]"}], "<", "0.01"}], 
+           ",", 
+           SuperscriptBox["10", 
+            RowBox[{"-", "90."}]], ",", 
+           RowBox[{"Evaluate", "[", 
+            RowBox[{"IntegrandRHSdistrBar", "[", 
+             RowBox[{"ms", ",", 
+              RowBox[{"ypexplToday", "[", "p", "]"}], ",", "Lev", ",", 
+              "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], "]"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"IntegrandRHSdistrTodayRetabulatedBar", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"p", ",", 
+             RowBox[{"IntegrandRHSdistrTodaySlowBar", "[", 
+              RowBox[{
+              "ms", ",", "p", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+              "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"p", ",", "pgrid"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"IntegrandRHSdistrTodayBar", "[", 
+          RowBox[{
+          "ms", ",", "p_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+          "]"}], "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Interpolation", "[", 
+            RowBox[{
+             RowBox[{"IntegrandRHSdistrTodayRetabulatedBar", "//", "Log"}], 
+             ",", 
+             RowBox[{"InterpolationOrder", "->", "1"}]}], "]"}], "[", 
+           RowBox[{"Log", "[", "p", "]"}], "]"}], "//", "Exp"}]}], ";"}], 
+       "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"IntegrandRHSdistrTodayBar", "[", 
+         RowBox[{
+         "ms", ",", "p_", ",", "Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], 
+         "]"}], "=", "0."}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\[CapitalOmega]sss", "=", 
+      RowBox[{
+       RowBox[{
+        FractionBox["mskev", 
+         RowBox[{"0.265", "*", "\[Rho]critical"}]], 
+        RowBox[{"NIntegrate", "[", 
+         RowBox[{
+          RowBox[{
+           FractionBox[
+            RowBox[{"Exp", "[", 
+             RowBox[{"3", "p"}], "]"}], 
+            RowBox[{"2", 
+             SuperscriptBox["Pi", "2"]}]], 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"IntegrandRHSdistrToday", "[", 
+              RowBox[{"ms", ",", 
+               RowBox[{"Exp", "[", "p", "]"}], ",", "Lev", ",", "L\[Mu]v", 
+               ",", "L\[Tau]v"}], "]"}], "+", 
+             RowBox[{"IntegrandRHSdistrTodayBar", "[", 
+              RowBox[{"ms", ",", 
+               RowBox[{"Exp", "[", "p", "]"}], ",", "Lev", ",", "L\[Mu]v", 
+               ",", "L\[Tau]v"}], "]"}]}], ")"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"p", ",", 
+            RowBox[{"Log", "[", 
+             RowBox[{"pminToday", "[", 
+              RowBox[{"Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], "]"}], 
+            ",", 
+            RowBox[{"Log", "[", 
+             RowBox[{"pmaxToday", "[", 
+              RowBox[{"Lev", ",", "L\[Mu]v", ",", "L\[Tau]v"}], "]"}], 
+             "]"}]}], "}"}], ",", 
+          RowBox[{
+          "Method", "->", "\"\<InterpolationPointsSubdivision\>\""}]}], 
+         "]"}]}], "//", "Quiet"}]}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.95976700589098*^9, 3.9597670145598655`*^9}, {
+   3.9597670570133295`*^9, 3.959767262124073*^9}, {3.9597674150803995`*^9, 
+   3.9597676011767254`*^9}, {3.9597677029948564`*^9, 
+   3.9597678826910777`*^9}, {3.9597679166499205`*^9, 
+   3.9597681701975813`*^9}, {3.9597682257658978`*^9, 
+   3.9597683227057323`*^9}, {3.9597683534561396`*^9, 
+   3.9597684220303698`*^9}, {3.9597686970113983`*^9, 
+   3.9597687306853757`*^9}, {3.959769312208878*^9, 3.9597696451365104`*^9}, {
+   3.9597696775180397`*^9, 3.9597697117645755`*^9}, {3.9597697949879837`*^9, 
+   3.9597697962274404`*^9}, {3.9597698358909087`*^9, 
+   3.9597698510872297`*^9}, {3.959769884889182*^9, 3.959770104574111*^9}, {
+   3.959770139660702*^9, 3.959770139749623*^9}, {3.959770268295263*^9, 
+   3.959770269525962*^9}, {3.959770336374715*^9, 3.959770338721715*^9}, {
+   3.95977050395679*^9, 3.9597705255338173`*^9}, {3.95977059509698*^9, 
+   3.959770595197262*^9}, {3.9597706296694546`*^9, 3.959770652352948*^9}, {
+   3.9597708751336355`*^9, 3.9597709151895256`*^9}, 3.9597710218230085`*^9, {
+   3.9597711161771946`*^9, 3.9597711222458367`*^9}, {3.9597713106378613`*^9, 
+   3.959771314808213*^9}, {3.9597715199285517`*^9, 3.9597715216599197`*^9}, {
+   3.959771703792425*^9, 3.9597717042535524`*^9}, {3.9597717547544985`*^9, 
+   3.959771758793706*^9}, 3.959772020235558*^9, {3.9597721407414913`*^9, 
+   3.959772158531842*^9}, {3.959772218592039*^9, 3.9597722382790155`*^9}, {
+   3.959773091012126*^9, 3.959773098528743*^9}, {3.9597732854932823`*^9, 
+   3.9597733455765095`*^9}, {3.9597736577588015`*^9, 3.959773658698637*^9}, 
+   3.959773838535784*^9, {3.959774177935032*^9, 3.9597744030584507`*^9}, 
+   3.9597744639618363`*^9, {3.9597748330013433`*^9, 3.9597748359172454`*^9}, {
+   3.9597751277631273`*^9, 3.9597752334861245`*^9}, {3.959775281055733*^9, 
+   3.9597753016204276`*^9}, {3.9597753388946133`*^9, 
+   3.9597753766384935`*^9}, {3.959775458002211*^9, 3.9597754605608006`*^9}, {
+   3.959775588070779*^9, 3.9597755886669397`*^9}, {3.959775641717083*^9, 
+   3.959775641887588*^9}, {3.959775870802382*^9, 3.959775928200524*^9}, {
+   3.959776158846118*^9, 3.959776256088423*^9}, {3.959822667409305*^9, 
+   3.959822735343403*^9}, {3.9598289979342413`*^9, 3.9598290662602463`*^9}, {
+   3.9598381920754128`*^9, 3.959838209551301*^9}, {3.959841263181614*^9, 
+   3.959841330597152*^9}, {3.9598431199681406`*^9, 3.959843139141852*^9}, {
+   3.9598449525650578`*^9, 3.959844993196458*^9}, {3.9598456211363325`*^9, 
+   3.9598456614102545`*^9}, {3.9598456924863777`*^9, 3.959845693081175*^9}, {
+   3.959847136944986*^9, 3.959847139571252*^9}, {3.9606000109893084`*^9, 
+   3.9606000164890957`*^9}},ExpressionUUID->"9af63cb3-b50b-4d06-8e25-\
+b2df0b6d8542"]
+}, Open  ]]
+},
+WindowSize->{682.5, 606.},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"42bcf554-011d-4cdc-8b6f-68b569ee4a48"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 239, 4, 74, "Section",ExpressionUUID->"c1996e57-a34d-402e-9bf8-cd73dfc4a529"],
+Cell[822, 28, 26897, 655, 2882, "Input",ExpressionUUID->"9af63cb3-b50b-4d06-8e25-b2df0b6d8542"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,640 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25092,        632]
+NotebookOptionsPosition[     24360,        611]
+NotebookOutlinePosition[     24775,        627]
+CellTagsIndexPosition[     24732,        624]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Thermodynamics plots", "Subsection",
+ CellChangeTimes->{{3.959738517416564*^9, 
+  3.959738519886718*^9}},ExpressionUUID->"c0c98416-8805-4e64-aec6-\
+c3dcc0e07e11"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ptChemicalPotential", "[", 
+   RowBox[{"Le_", ",", "L\[Mu]_", ",", "L\[Tau]_"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"f", "=", 
+      RowBox[{"{", 
+       RowBox[{"Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ifMissing", "[", 
+      RowBox[{"Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"LogLinearPlot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"\[Mu]\[Nu]eInt", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+          "T"], ",", 
+         FractionBox[
+          RowBox[{"\[Mu]eInt", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+          "T"], ",", 
+         FractionBox[
+          RowBox[{"\[Mu]\[Nu]\[Mu]Int", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+          "T"], ",", 
+         FractionBox[
+          RowBox[{"\[Mu]\[Mu]Int", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+          "T"], ",", 
+         FractionBox[
+          RowBox[{"\[Mu]\[Nu]\[Tau]Int", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+          "T"], ",", 
+         FractionBox[
+          RowBox[{"\[Mu]\[Tau]Int", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+          "T"], ",", 
+         FractionBox[
+          RowBox[{"\[Mu]CInt", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+          "T"]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"T", ",", "0.01", ",", "10"}], "}"}], ",", 
+       RowBox[{"Frame", "->", "True"}], ",", 
+       RowBox[{"ImageSize", "->", "Large"}], ",", 
+       RowBox[{"FrameStyle", "->", 
+        RowBox[{"Directive", "[", 
+         RowBox[{"Thick", ",", "Black", ",", "20"}], "]"}]}], ",", 
+       RowBox[{"PlotStyle", "->", 
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"Thick", ",", "#"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"Thick", ",", "#", ",", 
+                  RowBox[{"Dashing", "[", "0.01", "]"}]}], "}"}]}], "}"}], 
+              "&"}], "/@", 
+             RowBox[{"{", 
+              RowBox[{"Blue", ",", 
+               RowBox[{"Darker", "@", "Red"}], ",", "Green"}], "}"}]}], ",", 
+            "1"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"Thick", ",", "Black"}], "}"}], "}"}]}], "]"}]}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.01", ",", "10"}], "}"}], ",", "All"}], "}"}]}], ",", 
+       RowBox[{"PlotLegends", "->", 
+        RowBox[{"Placed", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"Row", "[", 
+               RowBox[{"{", "#", "}"}], "]"}], ",", "20", ",", "Black"}], 
+             "]"}], "&"}], "/@", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<\!\(\*SubscriptBox[\(\[Nu]\), \(e\)]\)\>\"", ",", 
+             "\"\<e\>\"", ",", 
+             "\"\<\!\(\*SubscriptBox[\(\[Nu]\), \(\[Mu]\)]\)\>\"", ",", 
+             "\"\<\[Mu]\>\"", ",", 
+             "\"\<\!\(\*SubscriptBox[\(\[Nu]\), \(\[Tau]\)]\)\>\"", ",", 
+             "\"\<\[Tau]\>\"", ",", "\"\<Q\>\""}], "}"}]}], ",", "Right"}], 
+         "]"}]}], ",", 
+       RowBox[{"FrameLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{"\"\<T [GeV]\>\"", ",", "\"\<\[Mu]/T\>\""}], "}"}]}], ",", 
+       RowBox[{"PlotLabel", "->", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<\!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", ",", "Le", ",", 
+             "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", ",", 
+             "L\[Mu]", ",", 
+             "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+             "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], "]"}]}]}], 
+      "]"}]}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ptCrossCheck", "[", 
+   RowBox[{"Le_", ",", "L\[Mu]_", ",", "L\[Tau]_"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ifMissing", "[", 
+      RowBox[{"Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"pt1", "=", 
+      RowBox[{"LogLogPlot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"dtdTint", "[", 
+            RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+           "/", 
+           RowBox[{"(", 
+            RowBox[{"dtdTint1", "[", 
+             RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+            ")"}]}], "}"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"T", ",", "TminIntegration", ",", "Tmax"}], "}"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"TminIntegration", ",", "Tmax"}], "}"}], ",", "All"}], 
+          "}"}]}], ",", 
+        RowBox[{"ImageSize", "->", "Large"}], ",", 
+        RowBox[{"Frame", "->", "True"}], ",", 
+        RowBox[{"FrameStyle", "->", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Thick", ",", "Black", ",", "20"}], "]"}]}], ",", 
+        RowBox[{"PlotLabel", "->", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<dt/dT check. \!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", 
+              ",", "Le", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", ",", 
+              "L\[Mu]", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+              "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], "]"}]}], 
+        ",", 
+        RowBox[{"FrameLabel", "->", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<T [GeV]\>\"", ",", 
+           "\"\<(dt/dT\!\(\*SubscriptBox[\()\), \
+\(int\)]\)/(dt/dT\!\(\*SubscriptBox[\()\), \(inside - code\)]\)\>\""}], 
+          "}"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"pt2", "=", 
+      RowBox[{"LogLogPlot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"{", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Hint", "[", 
+             RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+            "/", 
+            RowBox[{"HvallGeV", "[", "T", "]"}]}], ")"}], "}"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"T", ",", "2", ",", "Tmax"}], "}"}], ",", 
+        RowBox[{"ImageSize", "->", "Large"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "Tmax"}], "}"}], ",", "All"}], "}"}]}], ",", 
+        RowBox[{"Frame", "->", "True"}], ",", 
+        RowBox[{"FrameStyle", "->", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Thick", ",", "Black", ",", "20"}], "]"}]}], ",", 
+        RowBox[{"PlotLabel", "->", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<H check. \!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", ",", 
+              "Le", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", ",", 
+              "L\[Mu]", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+              "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], "]"}]}], 
+        ",", 
+        RowBox[{"FrameLabel", "->", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<T [GeV]\>\"", ",", 
+           "\"\<H/(H\!\(\*SubscriptBox[\()\), \(simple\)]\)\>\""}], "}"}]}], 
+        ",", 
+        RowBox[{"PlotLabel", "->", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<\!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", ",", "Le", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", ",", 
+              "L\[Mu]", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+              "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], "]"}]}]}],
+        "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"pt3", "=", 
+      RowBox[{"LogLogPlot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"gsint", "[", 
+          RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+         "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"T", ",", "TminIntegration", ",", "Tmax"}], "}"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"TminIntegration", ",", "Tmax"}], "}"}], ",", "All"}], 
+          "}"}]}], ",", 
+        RowBox[{"ImageSize", "->", "Large"}], ",", 
+        RowBox[{"Frame", "->", "True"}], ",", 
+        RowBox[{"FrameStyle", "->", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Thick", ",", "Black", ",", "20"}], "]"}]}], ",", 
+        RowBox[{"PlotLabel", "->", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<\!\(\*SubscriptBox[\(g\), \(\(*\)\(s\)\)]\). \
+\!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", ",", "Le", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", ",", 
+              "L\[Mu]", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+              "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], "]"}]}], 
+        ",", 
+        RowBox[{"FrameLabel", "->", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<T [GeV]\>\"", ",", 
+           "\"\<\!\(\*SubscriptBox[\(g\), \(\(*\)\(s\)\)]\)\>\""}], "}"}]}], 
+        ",", 
+        RowBox[{"PlotLabel", "->", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<\!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", ",", "Le", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", ",", 
+              "L\[Mu]", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+              "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], "]"}]}]}],
+        "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"pt4", "=", 
+      RowBox[{"LogLogPlot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"aFsol", "[", 
+            RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], 
+           "3"], 
+          RowBox[{"sint", "[", 
+           RowBox[{"T", ",", "Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}]}], 
+         "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"T", ",", "TminIntegration", ",", "Tmax"}], "}"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"TminIntegration", ",", "Tmax"}], "}"}], ",", "All"}], 
+          "}"}]}], ",", 
+        RowBox[{"ImageSize", "->", "Large"}], ",", 
+        RowBox[{"Frame", "->", "True"}], ",", 
+        RowBox[{"FrameStyle", "->", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Thick", ",", "Black", ",", "20"}], "]"}]}], ",", 
+        RowBox[{"PlotLabel", "->", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<Scale factor vs entropy. \!\(\*SubscriptBox[\(L\), \(e\)]\) \
+= \>\"", ",", "Le", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", ",", 
+              "L\[Mu]", ",", 
+              "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+              "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], "]"}]}], 
+        ",", 
+        RowBox[{"FrameLabel", "->", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<T [GeV]\>\"", ",", 
+           "\"\<\!\(\*SuperscriptBox[\(a\), \(3\)]\)s\>\""}], "}"}]}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{"pt1", ",", "pt2", ",", "pt3", ",", "pt4"}], "}"}], "]"}], 
+       ",", 
+       RowBox[{"ImageSizeMultipliers", "->", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "1", ",", "1"}], "}"}]}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.9597385702724504`*^9, 3.9597385913989134`*^9}, {
+   3.9597387509112225`*^9, 3.95973879003224*^9}, {3.9597388232123938`*^9, 
+   3.9597388572945166`*^9}, 3.959739178858815*^9, {3.9597392140578036`*^9, 
+   3.959739219488044*^9}},ExpressionUUID->"ceb95ecd-782f-4f9d-94f8-\
+6b038311b77a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Comparison with Kensuke plots", "Subsection",
+ CellChangeTimes->{{3.959738517416564*^9, 
+  3.9597385271049967`*^9}},ExpressionUUID->"52894258-d7dc-4e58-9b3c-\
+38a09f68291b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plotsKensuke", "[", 
+   RowBox[{"Le_", ",", "L\[Mu]_", ",", "L\[Tau]_"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"le", ",", "l\[Mu]", ",", "l\[Tau]"}], "}"}], "=", 
+      RowBox[{"{", 
+       RowBox[{"Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"keysKensuke", ",", 
+         RowBox[{"{", 
+          RowBox[{"le", ",", "l\[Mu]", ",", "l\[Tau]"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"ifMissing", "[", 
+         RowBox[{"Le", ",", "L\[Mu]", ",", "L\[Tau]"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"pt1", "=", 
+         RowBox[{"LogLinearPlot", "[", 
+          RowBox[{
+           RowBox[{"Evaluate", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              FractionBox[
+               RowBox[{"sintK", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}], 
+               RowBox[{"sint", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}]], ",", 
+              FractionBox[
+               RowBox[{"HintK", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}], 
+               RowBox[{"Hint", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}]], ",", 
+              RowBox[{"Abs", "[", 
+               FractionBox[
+                RowBox[{"PintK", "[", 
+                 RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                 "]"}], 
+                RowBox[{"pint", "[", 
+                 RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                 "]"}]], "]"}], ",", 
+              RowBox[{"Abs", "[", 
+               FractionBox[
+                RowBox[{"dtdTintK", "[", 
+                 RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                 "]"}], 
+                RowBox[{"dtdTint1", "[", 
+                 RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                 "]"}]], "]"}], ",", 
+              FractionBox[
+               RowBox[{"V\[Alpha]IntK", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}], 
+               RowBox[{"V\[Alpha]Inserted", "[", 
+                RowBox[{
+                "T", ",", "T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}]]}], "}"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"T", ",", "TminIntegration", ",", "TmaxK"}], "}"}], ",", 
+           RowBox[{"PlotRange", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"TminIntegration", ",", "TmaxK"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0.8", ",", "1.2"}], "}"}]}], "}"}]}], ",", 
+           RowBox[{"Frame", "->", "True"}], ",", 
+           RowBox[{"FrameStyle", "->", 
+            RowBox[{"Directive", "[", 
+             RowBox[{"Thick", ",", "Black", ",", "20"}], "]"}]}], ",", 
+           RowBox[{"ImageSize", "->", "Large"}], ",", 
+           RowBox[{"FrameLabel", "->", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<T [GeV]\>\"", ",", "\"\<ratio (Kensuke-to-my)\>\""}], 
+             "}"}]}], ",", 
+           RowBox[{"PlotLegends", "->", 
+            RowBox[{"Placed", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", "#", "}"}], "]"}], ",", "20", ",", "Black"}], 
+                 "]"}], "&"}], "/@", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<s\>\"", ",", "\"\<H\>\"", ",", "\"\<p\>\"", ",", 
+                 "\"\<dt/dT\>\"", ",", 
+                 "\"\<\!\(\*SubscriptBox[\(V\), \(\[Alpha]\)]\)(p=T)\>\""}], 
+                "}"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0.8", ",", "0.2"}], "}"}]}], "]"}]}], ",", 
+           RowBox[{"PlotStyle", "->", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"Thick", ",", "#"}], "}"}], "&"}], "/@", 
+              RowBox[{"{", 
+               RowBox[{"Blue", ",", 
+                RowBox[{"Darker", "@", "Red"}], ",", 
+                RowBox[{"Darker", "@", "Green"}], ",", "Black", ",", 
+                "Magenta"}], "}"}]}], ")"}]}], ",", 
+           RowBox[{"PlotLabel", "->", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<\!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", ",", "Le", 
+                 ",", "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", 
+                 ",", "L\[Mu]", ",", 
+                 "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+                 "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], 
+             "]"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"pt2", "=", 
+         RowBox[{"LogLogPlot", "[", 
+          RowBox[{
+           RowBox[{"Evaluate", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              FractionBox[
+               RowBox[{"dtdTintKoldOld", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}], 
+               RowBox[{"dtdTint", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}]], ",", 
+              FractionBox[
+               RowBox[{"dtdTintKold", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}], 
+               RowBox[{"dtdTint", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}]], ",", 
+              FractionBox[
+               RowBox[{"dtdTintK", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}], 
+               RowBox[{"dtdTint1", "[", 
+                RowBox[{"T", ",", "le", ",", "l\[Mu]", ",", "l\[Tau]"}], 
+                "]"}]]}], "}"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"T", ",", "TminIntegration", ",", "TmaxK"}], "}"}], ",", 
+           RowBox[{"Frame", "->", "True"}], ",", 
+           RowBox[{"PlotRange", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"TminIntegration", ",", "TmaxK"}], "}"}], ",", "All"}],
+              "}"}]}], ",", 
+           RowBox[{"ImageSize", "->", "Large"}], ",", 
+           RowBox[{"FrameStyle", "->", 
+            RowBox[{"Directive", "[", 
+             RowBox[{"Thick", ",", "Black", ",", "20"}], "]"}]}], ",", 
+           RowBox[{"PlotLegends", "->", 
+            RowBox[{"Placed", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", "#", "}"}], "]"}], ",", "20", ",", "Black"}], 
+                 "]"}], "&"}], "/@", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<\!\(\*SubscriptBox[\(p\), \
+\(wrong\)]\)+(d\[Rho]/dT\!\(\*SubscriptBox[\()\), \(wrong\)]\)\>\"", ",", 
+                 "\"\<\!\(\*SubscriptBox[\(p\), \(wrong\)]\)\>\"", ",", 
+                 "\"\<Current\>\""}], "}"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0.8", ",", "0.7"}], "}"}]}], "]"}]}], ",", 
+           RowBox[{"PlotStyle", "->", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"Thick", ",", "#"}], "}"}], "&"}], "/@", 
+              RowBox[{"{", 
+               RowBox[{"Blue", ",", 
+                RowBox[{"Darker", "@", "Red"}], ",", 
+                RowBox[{"Darker", "@", "Green"}]}], "}"}]}], ")"}]}], ",", 
+           RowBox[{"FrameLabel", "->", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<T [GeV]\>\"", ",", 
+              "\"\<ratio of dt/dT (python-to-my)\>\""}], "}"}]}], ",", 
+           RowBox[{"PlotLabel", "->", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<\!\(\*SubscriptBox[\(L\), \(e\)]\) = \>\"", ",", "Le", 
+                 ",", "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Mu]\)]\) = \>\"", 
+                 ",", "L\[Mu]", ",", 
+                 "\"\<, \!\(\*SubscriptBox[\(L\), \(\[Tau]\)]\) = \>\"", ",", 
+                 "L\[Tau]"}], "}"}], "]"}], ",", "20", ",", "Black"}], 
+             "]"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"dtdTint", "[", "T_", "]"}], "=", 
+           RowBox[{"dtdTintKoldOld", "[", "T", "]"}]}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{"pt1", ",", "pt2"}], "}"}], "]"}], ",", 
+          RowBox[{"ImageSizeMultipliers", "->", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "1"}], "}"}]}]}], "]"}]}], 
+       "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "Print", "[", "\"\<The unintegrated data is missing!\>\"", "]"}]}], 
+      "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.9597391878261967`*^9, 3.959739206353977*^9}, {
+  3.959742343114834*^9, 3.9597423559561415`*^9}, {3.9597424156532307`*^9, 
+  3.959742451343196*^9}, {3.95983286383394*^9, 3.959832901613967*^9}},
+ CellLabel->
+  "In[561]:=",ExpressionUUID->"8b2e9940-0e77-42c7-a068-488143e0f680"]
+}, Open  ]]
+},
+WindowSize->{583.5, 529.5},
+WindowMargins->{{216.375, Automatic}, {Automatic, 38.625}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"72642322-7959-46de-9fdf-f1fbe52443f0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 168, 3, 54, "Subsection",ExpressionUUID->"c0c98416-8805-4e64-aec6-c3dcc0e07e11"],
+Cell[751, 27, 13354, 334, 1333, "Input",ExpressionUUID->"ceb95ecd-782f-4f9d-94f8-6b038311b77a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14142, 366, 179, 3, 54, "Subsection",ExpressionUUID->"52894258-d7dc-4e58-9b3c-38a09f68291b"],
+Cell[14324, 371, 10020, 237, 1000, "Input",ExpressionUUID->"8b2e9940-0e77-42c7-a068-488143e0f680"]
+}, Open  ]]
+}
+]
+*)
+
