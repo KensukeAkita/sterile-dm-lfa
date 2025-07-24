@@ -6,7 +6,7 @@ import numpy as np
 from numba import jit
 from Interaction_rate.D_function import D_function
 from Constants import *
-from Setup_Grids import *
+from Setup_Bins import *
 
 
 @jit(nopython=True,nogil=True,fastmath=True) 
