@@ -2,7 +2,7 @@ import numpy as np
 import scipy as sp
 from Constants import *
 from QCD_GlobalParameters import * 
-from Setup_Grids import *
+from Setup_Bins import *
 from Tolerances import *
 from Thermodynamics.DOF import *
 from Interaction_rate.Interaction_rate_lepton import Interaction_rate_lepton
