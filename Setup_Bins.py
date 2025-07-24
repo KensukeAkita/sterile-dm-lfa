@@ -2,10 +2,10 @@ import numpy as np
 from Constants import * 
 from QCD_GlobalParameters import * 
 
-#Setting for linear momentum grids
-#the number of momentum grids should be an odd number because we use the Simpson method
+#Setting for linear momentum bins
+#the number of momentum bins should be an odd number because we use the Simpson method
 
-n = 10001 #number of grids for sterile neutrinos 
+n = 10001 #number of bins for sterile neutrinos 
 #For Le=-Lmu=0.1, Ltau=0, we use n=200001.
 
 y_max = 16
@@ -36,7 +36,7 @@ for ni in range(n):
     
     
     
-#Grids for the table of neutrino reaction rates
+#Bins for the table of neutrino reaction rates
 
 ni_Table = 100
 
