@@ -6,7 +6,7 @@ import numpy as np
 from numba import jit
 from Interaction_rate.D_function import D_function
 from Constants import *
-from Setup_Grids import *
+from Setup_Bins import *
 
 @jit(nopython=True,nogil=True,fastmath=True)
 def Interaction_rate_lepton(T,i,zeta_nue,zeta_numu,zeta_nutau,zeta_e,zeta_mu,zeta_tau,flavor):
