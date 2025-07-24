@@ -6,7 +6,7 @@ import numpy as np
 from numba import jit
 from Constants import *
 from QCD_GlobalParameters import * 
-from Setup_Grids import *
+from Setup_Bins import *
 from Thermodynamics.DOF import *
 
 ChiData = np.loadtxt("ChiTable.dat")
