@@ -2,7 +2,7 @@ import numpy as np
 from numba import jit
 from Constants import *
 from QCD_GlobalParameters import * 
-from Setup_Grids import *
+from Setup_Bins import *
 from Thermodynamics.DOF import gs_below120MeV, gs_above120MeV
 
 ChiData = np.loadtxt("ChiTable.dat")
