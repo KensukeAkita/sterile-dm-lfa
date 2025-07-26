@@ -1,3 +1,4 @@
+#Data from https://github.com/ntveem/sterile-dm/blob/master/data/tables/ChiTable_alltemp.dat
 #T(MeV) Chi2B                   Chi2Q                   Chi11QB 
 100.    0.002633943346870834    0.18189793693622966     0.0009900491427859391
 105.    0.004147389720346858    0.19474753473064735     0.0015131745932384735
