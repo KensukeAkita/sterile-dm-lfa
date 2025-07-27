@@ -24,7 +24,7 @@ The code contains the following main scripts in Python:
 
 `Make_Rate_Table.py`: is a script to make a table of the active neutrino interaction rate in temperature (T) and its momentum (y=p/T). This table is an input for System_SterileNuDM.py.
 
-`Setup_Bins`.py: fixes the numbers and ranges of grids, such as the momentum of sterile neutrinos. In particular, the number of grids for the momentum of sterile neutrinos must be very large for numerical convergence. A larger number of its bins is required for very large lepton asymmetries.
+`Setup_Bins`.py: fixes the numbers and ranges of grids, such as the momentum of sterile neutrinos. In particular, the number of grids for the momentum of sterile neutrinos must be very large for numerical convergence. A larger number of its bins is required for larger lepton asymmetries and lighter sterile neutrino masses.
 
 ### Analytic solver
 
