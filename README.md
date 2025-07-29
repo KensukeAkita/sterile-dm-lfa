@@ -1,6 +1,6 @@
 # sterile-dm-lfa: Sterile neutrino dark matter with lepton flavor asymmetries
 
-The code "sterile-dm-lfa" has been developed by Kensuke Akita and Maksym Ovchynnikov to trace the evolution of sterile neutrino dark matter in the presence of primordial lepton flavor asymmetries. The underlying physics and thechnical details are described in the associated preprint [25XX.XXXXX]. If you use this code, please cite this reference.
+The code "sterile-dm-lfa" has been developed by Kensuke Akita and Maksym Ovchynnikov to trace the evolution of sterile neutrino dark matter in the presence of primordial lepton flavor asymmetries. The underlying physics and thechnical details are described in the associated preprint [arXiv:2507.20659](https://arxiv.org/abs/2507.20659). If you use this code, please cite this reference.
 
 The code is made of two parts:
 
@@ -45,5 +45,5 @@ To use it, just open the main notebook <dt><code>analytic-solver.nb</code></dt>,
 
 ## Limitations
 
-Details of the limitations of this code are described in the main text of [25XX.XXXXX]. See also Section A in the Supplemental Material for the discretization solver and Section E in the Supplemental Material for the analytic solver.
+Details of the limitations of this code are described in the main text of [arXiv:2507.20659](https://arxiv.org/abs/2507.20659). See also Section A in the Supplemental Material for the discretization solver and Section E in the Supplemental Material for the analytic solver.
 
