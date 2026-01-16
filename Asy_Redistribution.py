@@ -49,8 +49,8 @@ def eqs_redist(x,T,La,Le_ini,Lmu_ini,Ltau_ini,flavor):
 
     zeta_pic = -zeta_Q
 
-    zeta_p = 1/3*zeta_B + zeta_Q
-    zeta_n = 1/3*zeta_B
+    zeta_p = zeta_B + zeta_Q
+    zeta_n = zeta_B
 
 
     xe = me/T
