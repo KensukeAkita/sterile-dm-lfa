@@ -1,7 +1,7 @@
 #Sterile Nu parameters
 
 Uas = (1.70*10**(-14))**(1/2)
-ms = 50*1e-3 #keV->MeV 
+m_nus = 50*1e-3 #keV->MeV 
 
 Le_ini = 1e-3
 Lmu_ini = 1e-3
