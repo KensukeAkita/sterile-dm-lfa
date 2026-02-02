@@ -70,7 +70,7 @@ def Interaction_rate_meson(T,i,zeta_nua,zeta_a,zeta_Q,zeta_U,zeta_D,flavor):
 
 
 
-    #Collision terms #The current version only include pions.    
+    #Collision terms   
     for nk in range(n1): #bin for an integration in the collision term
 
         k = y_min1 + dy1*nk
