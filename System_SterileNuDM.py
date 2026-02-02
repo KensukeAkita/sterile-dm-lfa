@@ -8,7 +8,7 @@ from Thermodynamics.DOF import grho_below120MeV, dgrhodT_below120MeV, grho_above
 from Asy_Redistribution import eqs_redist
 from Thermodynamics.Thermo_quantities import Thermo_quantities
 
-def System_SterileNuDM(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,s_ini,ms,Uas,Le_ini,Lmu_ini,Ltau_ini,flavor):
+def System_SterileNuDM(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,s_ini,m_nus,Uas,Le_ini,Lmu_ini,Ltau_ini,flavor):
 
     La = sys_values[2*n] #(n-n_bar)/s_SM mixing with sterile nu
 
@@ -65,7 +65,7 @@ def System_SterileNuDM(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,s_ini,ms,Ua
 
     #Kinetic equations for sterile nu production
 
-    kinetic_eqs = Kinetic_eq(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,zeta_nua,s_ini,rho,s,P,dDelta_rhodT,rho_nua, rho_a, Del_nua, Del_a, Del_nu_total, Del_c_total, Del_Q_QCD,ms,Uas)
+    kinetic_eqs = Kinetic_eq(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,zeta_nua,s_ini,rho,s,P,dDelta_rhodT,rho_nua, rho_a, Del_nua, Del_a, Del_nu_total, Del_c_total, Del_Q_QCD,m_nus,Uas)
 
 
     return kinetic_eqs
@@ -74,7 +74,7 @@ def System_SterileNuDM(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,s_ini,ms,Ua
 
 
 @jit(nopython=True,nogil=True,fastmath=True) 
-def Kinetic_eq(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,zeta_nua,s_ini,rho,s,P,dDelta_rhodT,rho_nua, rho_a, Del_nua, Del_a, Del_nu_total, Del_c_total, Del_Q_QCD,ms,Uas):
+def Kinetic_eq(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,zeta_nua,s_ini,rho,s,P,dDelta_rhodT,rho_nua, rho_a, Del_nua, Del_a, Del_nu_total, Del_c_total, Del_Q_QCD,m_nus,Uas):
 
 
     #Distribution for sterile neutrinos
@@ -149,8 +149,8 @@ def Kinetic_eq(T,sys_values,Gamma_a_Table,Gamma_a_anti_Table,zeta_nua,s_ini,rho,
         
         #Oscillation Probability in matter
     
-        Pas = 1/2*(ms**2/(2*p)*Uas)**2/((Va - ms**2/(2*p)*(1-Uas**2)**(1/2))**2 + (Gamma_a/2)**2)
-        Pas_anti = 1/2*(ms**2/(2*p)*Uas)**2/((Va_anti + ms**2/(2*p)*(1-Uas**2)**(1/2))**2 + (Gamma_a_anti/2)**2)
+        Pas = 1/2*(m_nus**2/(2*p)*Uas)**2/((Va - m_nus**2/(2*p)*(1-Uas**2)**(1/2))**2 + (Gamma_a/2)**2)
+        Pas_anti = 1/2*(m_nus**2/(2*p)*Uas)**2/((Va_anti + m_nus**2/(2*p)*(1-Uas**2)**(1/2))**2 + (Gamma_a_anti/2)**2)
 
 
         #Kinetic equations for sterile neutrinos
